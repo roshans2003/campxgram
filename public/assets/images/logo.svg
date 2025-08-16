@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="171" height="36" viewBox="0 0 171 36" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="campXgram logo">
+  <defs>
+    <linearGradient id="gradX" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3EA5"/>
+      <stop offset="100%" stop-color="#6A00FF"/>
+    </linearGradient>
+    <filter id="subtleShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Transparent background by default in SVG -->
+
+  <!-- Wordmark -->
+  <g filter="url(#subtleShadow)">
+    <text x="85" y="18" text-anchor="middle" dominant-baseline="central"
+          font-family="Poppins, Inter, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+          font-weight="700"
+          font-size="10"
+          letter-spacing="2">
+      <tspan fill="#FFFFFF">camp</tspan>
+      <tspan fill="url(#gradX)">X</tspan>
+      <tspan fill="#FFFFFF">gram</tspan>
+    </text>
+  </g>
+</svg>
