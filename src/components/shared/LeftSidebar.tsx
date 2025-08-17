@@ -31,7 +31,7 @@ const LeftSidebar = () => {
           <img
             src="/assets/images/logo.svg"
             alt="logo"
-            className="w-80 h-auto"
+            className="w-60 h-auto"
           />
         </Link>
 

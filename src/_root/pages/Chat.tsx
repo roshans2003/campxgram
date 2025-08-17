@@ -163,7 +163,7 @@ const Chat = () => {
         <div className="flex-1 px-6 py-6 overflow-y-auto custom-scrollbar">
           {isLoading ? (
             <div className="flex flex-col items-center justify-center h-full">
-              <div className="p-6 bg-gray-800/60 rounded-3xl mb-6 shadow-xl">
+              <div className="p-6 bg-rose-800/60 rounded-3xl mb-6 shadow-xl">
                 <Loader2 className="w-16 h-16 animate-spin text-blue-400" />
               </div>
               <p className="text-gray-400 text-lg">Loading messages...</p>
@@ -251,7 +251,7 @@ const Chat = () => {
             <button
               onClick={sendMessage}
               disabled={!input.trim() || isSending || !getUserId()}
-              className="p-5 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-3xl hover:from-blue-600 hover:to-purple-700 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 disabled:transform-none"
+              className="p-5 bg-gradient-to-r from-rose-500 to-purple-600 text-white rounded-3xl hover:from-blue-600 hover:to-purple-700 disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 disabled:transform-none"
             >
               {isSending ? (
                 <Loader2 className="w-6 h-6 animate-spin" />

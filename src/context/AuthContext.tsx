@@ -40,26 +40,34 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(false);
 
   const checkAuthUser = async () => {
+    console.log("🔍 Checking authentication...");
     setIsLoading(true);
     try {
       const currentAccount = await getCurrentUser();
+      console.log("📱 Current account:", currentAccount);
+      
       if (currentAccount) {
-        setUser({
+        const userData = {
           id: currentAccount.$id,
           name: currentAccount.name,
           username: currentAccount.username,
           email: currentAccount.email,
           imageUrl: currentAccount.imageUrl,
           bio: currentAccount.bio,
-        });
+        };
+        
+        console.log("✅ User authenticated:", userData);
+        setUser(userData);
         setIsAuthenticated(true);
-
         return true;
       }
 
+      console.log("❌ No current account found");
+      setIsAuthenticated(false);
       return false;
     } catch (error) {
-      console.error(error);
+      console.error("🚨 Auth check error:", error);
+      setIsAuthenticated(false);
       return false;
     } finally {
       setIsLoading(false);
@@ -67,16 +75,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   useEffect(() => {
+    console.log("🔄 AuthProvider useEffect triggered");
+    
     const cookieFallback = localStorage.getItem("cookieFallback");
+    console.log("🍪 Cookie fallback:", cookieFallback);
+    
     if (
       cookieFallback === "[]" ||
       cookieFallback === null ||
       cookieFallback === undefined
     ) {
+      console.log("🚫 No valid cookie fallback, redirecting to sign-in");
       navigate("/sign-in");
+    } else {
+      console.log("✅ Valid cookie fallback found, checking auth");
+      checkAuthUser();
     }
-
-    checkAuthUser();
   }, []);
 
   const value = {

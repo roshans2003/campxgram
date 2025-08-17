@@ -27,7 +27,7 @@ export const sidebarLinks = [
   // 👇 New Chat menu
   {
     imgURL: "/assets/icons/chat.svg", // <-- use an existing icon in your assets
-    route: "/chat",
+    route: "/Chat",
     label: "Chat",
   },
 ];
